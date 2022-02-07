@@ -1,0 +1,101 @@
+.section-title {
+    margin-top: 4rem;
+    text-align: center;
+    h2, .title {
+        margin-top: 1rem;
+        font-size: 1rem;
+        white-space: nowrap;
+        overflow: hidden;
+        padding: 0 1rem;
+    }
+}
+
+.section-proxy {
+    min-height: 52vh;
+    .no-wallet-info {
+        margin-top: 3rem;
+        text-align: center;
+    }
+}
+
+.col {
+    margin: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.card-container {
+    padding: 1.5rem;
+    width: min(550px, 98%);
+    background: #ffffff;
+    color: #565656;
+    box-shadow: 5px 5px 0px rgb(0 0 0 / 20%);
+    display: flex;
+    flex-direction: column;
+
+    .card-title {
+        text-align: center;
+        font-weight: 500;
+        span {
+            font-weight: 600;
+        }
+    }
+    .card-content {
+        position: relative;
+        margin-top: 1rem;
+        height: 100%;
+    }
+
+    .card-footer {
+        justify-self: flex-end;
+    }
+
+}
+
+.address-box {
+    text-align: center;
+    font-weight: bold;
+    color: #3471ff;
+}
+
+p.small {
+    font-size: .8rem;
+}
+
+p.danger {
+    color: var(--color-danger);
+}
+
+.button-test-container {
+    margin: 2rem auto;
+    display: flex;
+    gap: 2rem;
+    justify-content: space-evenly;
+    max-width: 720px;
+}
+
+@media screen and (min-width: 680px) {
+    .col {
+        flex-direction: row;
+        align-items: stretch;
+        gap: 1rem;
+    }
+}
+
+@media screen and (min-width: 980px) {
+    .section-title h2 {
+        font-size: 1.5rem;
+    }
+    .col {
+        gap: 2rem;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .section-title h2 {
+        font-size: 2rem;
+    }
+}

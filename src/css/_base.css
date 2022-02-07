@@ -1,0 +1,129 @@
+:root {
+    --container-width: 1500px;
+    --font-family-primary: "Overpass","Helvetica","Arial",sans-serif;
+    --bg-color: #5286FE;
+    --bg-color-alt: #1f202a;
+    --bg-color-alt2: #1c1c1d;
+    --fg-color: white;
+    --fg-color-alt: rgb(75,85,99);
+    --color-primary: #58baf7;
+    --color-primary-darker: #314f96;
+    --color-primary-lighter: #314f96;
+    --color-danger: #e91b2e;
+    --color-danger-darker: #bd1b2a;
+    --color-danger-alt: #f1626f;
+    --color-success: #56ffc8;
+    --line-color: rgb(31,41,55);
+    --line-color-alt: rgb(107, 114, 128);
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+*,*:before,*:after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--fg-color);
+    font-family: var(--font-family-primary);
+    font-weight: 300;
+    line-height: 1.15;
+    margin: 0;
+    overflow-y: scroll;
+}
+
+body.navbar-open, body.modal-open {
+    overflow-y: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: "Overpass","Helvetica","Arial",sans-serif;
+    margin: 0;
+}
+p {
+    margin: 0;
+}
+a {
+    color: var(--fg-color);
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+    margin: 0;
+    padding: 0;
+}
+
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+}
+button,
+input {
+    overflow: visible;
+}
+button,
+select {
+    text-transform: none;
+}
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    cursor: pointer;
+    -webkit-appearance: button;
+}
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+    height: auto;
+}
+[type="search"] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px;
+}
+[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+.container {
+    width: min(95%, var(--container-width));
+    margin: 0 auto;
+}
+
+#root {
+    position: relative;
+    min-height: 100vh;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+}
+
+.Toastify__toast {
+    font-family: var(--font-family-primary)!important;
+}

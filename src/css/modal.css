@@ -1,0 +1,249 @@
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 2000;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    transform: scale(0, 0);
+    transition: opacity 100ms ease-in-out 50ms;
+    overflow-y:scroll;
+    background: #343a6aeb;
+    &.active {
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    &.large {
+        justify-content: center;
+        align-items: center;
+    }
+
+    &.small, &.medium {
+        justify-content: center;
+        align-items: center;
+    }
+
+    &.scroll, &.long {
+        align-items: flex-start;
+    }
+}
+
+.modal-backdrop {
+    background: #343a6aeb;
+    backdrop-filter: blur(8px);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+}
+
+.active .modal-backdrop {
+    opacity: 1;
+}
+
+.modal {
+    /* border-radius: 10px; */
+    box-shadow: 1px 1px 40px 2px rgb(0 0 0 / 28%);
+    position: relative;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: 100%;
+    max-width: 900px;
+}
+
+.small .modal{
+    width: max-content;
+    max-width: 400px;
+}
+
+.medium .modal{
+    max-width: 600px;
+}
+
+.button-modal-close {
+    --button-size: 25px;
+    border-radius: var(--button-size);
+    width: var(--button-size);
+    height: var(--button-size);
+    border: none;
+    background: var(--color-danger);
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    box-shadow: 1px 1px 4px 2px rgb(0 0 0 / 28%);
+    z-index: 2001;
+    color: white;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    i {
+        text-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
+    }
+}
+
+
+.modal-inner {
+    background: var(--bg-color);
+    /* border-radius: 10px; */
+    /* box-shadow: 1px 1px 4px 2px rgb(0 0 0 / 28%); */
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+.modal-button {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.modal-body {
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: 200;
+    padding: 2em 2.5em;
+    color: var(--color-primary-lightest);
+}
+
+.modal-footer {
+    display: flex;
+    background-color: white;
+    /* border-bottom-left-radius: 10px; */
+    /* border-bottom-right-radius: 10px; */
+}
+
+.button-modal-footer {
+    background: none;
+    border: none;
+    width: 100%;
+    padding: 1em 0;
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--bg-color);
+
+    &:hover, &:focus {
+        background-color: var(--color-primary);
+        color: white;
+    }
+
+    &-red {
+        background-color: var(--color-danger);
+        color: white;
+        &:hover, &:focus {
+            background-color: var(--color-danger-darker);
+        }
+    }
+}
+
+.modal-body-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.modal-title {
+    font-size: 1.3rem;
+}
+.modal-media {
+    background: var(--color-modal-darker);
+    padding: 3rem;
+    display: flex;
+    align-items: center;
+
+    img {
+        margin: 0 auto;
+        display: block;
+    }
+}
+
+.modal-description {
+    padding: 0rem 1.5rem 1rem 1.5rem;
+    flex-grow: 1;
+
+    h4 {
+        text-align: center;
+    }
+}
+
+.modal-chooser {
+    padding: 2rem 1rem;
+}
+
+.modal-chooser-item {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--color-primary-darker);
+    padding: 0.5rem 1.5rem;
+    /* border-radius: 10px; */
+    min-height: 115px;
+
+    &:hover, &:focus {
+        background-color: #0000004d;
+    }
+
+    h4 {
+        font-size: 1rem;
+        width: 150px;
+    }
+
+    .wallet-logo-img {
+        justify-self: center;
+        flex-grow: 1;
+
+        img {
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+    }
+}
+
+.modal-confirm .modal-body {
+    padding: 3rem 3rem;
+}
+
+
+@media screen and (min-width: 768px) {
+    .modal-container.large {
+        justify-content: center;
+        /* align-items: center; */
+    }
+
+    .modal-body-group:not(.vertical) {
+        flex-direction: row;
+
+        .modal-description {
+            padding-top: 1rem;
+            padding-left: 0;
+
+            h4 {
+                font-family: var(--font-family-primary);
+                text-align: left;
+            }
+        }
+    }
+
+}
+
+@media screen and (min-height: 768px) {
+    .modal-container {
+        &.scroll {
+            align-items: center;
+        }
+        &.long {
+            align-items: flex-start;
+        }
+    }
+}
